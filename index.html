@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday - Locket💛🎂</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/qvjz8QFW/Logo.png" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="welcome-screen" class="welcome-screen">
+        <img src="style/locket.png" alt="Locket Logo" class="welcome-logo">
+    </div>
+    <div class="app-container">
+        <div id="emoji-overlay"></div>
+        <header class="app-header">
+            <div class="header-left">
+                <button class="icon-btn">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </button>
+            </div>
+
+            <div class="header-center">
+                <button class="pill-btn">
+                    <span>Mọi người</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <div class="header-right">
+                <div class="avatar-container" id="profileBtn">
+                    <img src="style/img/Avatar.jpg" alt="Profile" class="header-avatar">
+                </div>
+            </div>
+        </header>
+
+        <main class="gallery-grid" id="galleryGrid">
+        </main>
+
+        <nav class="tab-bar-floating">
+            <div class="tab-item">
+                <i class="fa-regular fa-calendar-days"></i>
+            </div>
+            <div class="tab-item shutter">
+                <div class="shutter-inner">
+                    <i class="fa-regular fa-circle"></i>
+                </div>
+            </div>
+            <div class="tab-item chat">
+                <i class="fa-solid fa-comment"></i>
+                <span class="badge">5+</span>
+            </div>
+        </nav>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <header class="modal-header">
+            <div class="header-actions-left">
+                <label class="switch">
+                    <input type="checkbox" id="autoPlayToggle">
+                    <span class="slider-round"></span>
+                </label>
+            </div>
+            <span class="header-title">Gửi đến...</span>
+            <div class="header-actions-right">
+                <span class="download-icon" id="downloadBtn"><i class="fa-solid fa-download"></i></span>
+            </div>
+        </header>
+
+        <div class="modal-main">
+            <div class="modal-slider-container" id="modalSlider">
+            </div>
+
+            <div class="pagination-dots" id="paginationDots">
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <div class="action-btn secondary close-preview-btn"><i class="fa-solid fa-xmark"></i></div>
+            <div class="action-btn primary"><i class="fa-solid fa-paper-plane"></i></div>
+            <div class="action-btn next-preview" id="nextPreviewBtn">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="notification" class="notification-banner"></div>
+
+    <div id="musicModal" class="modal music-modal">
+        <div class="music-card">
+            <div class="music-header">
+                <button class="close-music-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="album-art-container">
+                <img src="style/sound/Anh (1).jpg" alt="Album Art" id="musicAlbumArt" class="album-art">
+            </div>
+
+            <div class="song-info">
+                <h2 id="musicSongTitle" class="song-title">Tên bài hát</h2>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar-wrapper">
+                    <div id="musicProgressBar" class="progress-bar">
+                        <div class="progress-handle"></div>
+                    </div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="music-controls">
+                <button id="prevBtn" class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="playPauseBtn" class="control-btn play-pause"><i class="fa-solid fa-play"></i></button>
+                <button id="nextBtn" class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+
+            <div id="playlist" class="playlist-container">
+            </div>
+        </div>
+    </div>
+
+    <div id="chatListModal" class="modal chat-list-modal">
+        <div class="chat-list-container">
+            <header class="chat-list-header">
+                <div class="header-left"></div>
+                <span class="header-title">Trò chuyện</span>
+                <div class="header-right">
+                    <img src="style/img/Avatar.jpg" alt="Profile" class="header-avatar-small">
+                </div>
+            </header>
+            <div class="chat-list-content">
+                <div class="chat-item" id="mainChatItem">
+                    <div class="chat-avatar">
+                        <img src="style/img/Anh (1).jpg" alt="Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name-row">
+                            <span class="chat-name">Người luôn yêu em</span>
+                            <span class="chat-time">vừa xong</span>
+                        </div>
+                        <div class="chat-preview">Nhấn để xem tin nhắn mới...</div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right chat-arrow"></i>
+                </div>
+            </div>
+            <button class="close-chat-list-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <div id="chatDetailModal" class="modal chat-detail-modal">
+        <div class="chat-detail-container">
+            <header class="chat-detail-header">
+                <button class="back-chat-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="chat-detail-user">
+                    <div class="chat-detail-avatar">
+                        <img src="style/img/Anh (1).jpg" alt="Avatar">
+                    </div>
+                    <span class="chat-detail-name">Người luôn yêu em</span>
+                </div>
+                <div class="header-actions"></div>
+            </header>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be generated here -->
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-input-wrapper">
+                    <input type="text" placeholder="Gửi tin nhắn...">
+                    <div class="chat-input-emojis">
+                        <span>🤣</span>
+                        <span>💛</span>
+                        <span>🔥</span>
+                    </div>
+                </div>
+                <div class="chat-input-icon"><i class="fa-regular fa-face-smile"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="calendarModal" class="modal calendar-modal">
+        <div class="calendar-card">
+            <div class="calendar-header">
+                <span class="month-year">Kỷ niệm</span>
+                <button class="close-calendar-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="calendar-scroll-area" id="calendarScrollArea">
+            </div>
+        </div>
+    </div>
+
+    <div id="cakeModal" class="modal cake-modal">
+        <div class="stars-container"></div>
+        <div class="cake-scene">
+            <div class="cake-pivot">
+                <!-- Cake tiers will be generated here -->
+            </div>
+        </div>
+        <button class="close-cake-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <script src="style/script.js"></script>
+</body>
+
+</html>
