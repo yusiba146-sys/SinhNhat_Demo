@@ -1,0 +1,8 @@
+birthday=19 - 05 - 2026
+message='
+Hello con chó:)
+Happy birthday to my favorite person.
+Hôm nay 19/5 ngày một cô bé ra đời. Thêm một tuổi mới, mong em vẫn giữ được sự dịu dàng và những điều đẹp nhất thuộc về riêng em.
+Hy vọng chặng đường phía trước của em sẽ có nhiều thành công, nhiều bình yên và những người thật lòng.
+Happy birthday em 🤍
+'
